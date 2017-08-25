@@ -50,7 +50,7 @@
   -o-transform: rotateX( 180deg ) translate3d( 0px, 0px, 250px );
   transform: rotateX( 180deg ) translate3d( 0px, 0px, 250px );
 }
-.left {
+.top {
   background-color: white;
   width: 500px;
   height: 500px;
@@ -63,7 +63,7 @@
   -o-transform: rotateX( 90deg ) translate3d( 0px, 0px, 250px );
   transform: rotateX( 90deg ) translate3d( 0px, 0px, 250px );
 }
-.right {
+.bottom {
   background-color: white;
   width: 500px;
   height: 500px;
@@ -76,7 +76,7 @@
   -o-transform: rotateX( -90deg ) translate3d( 0px, 0px, 250px );
   transform: rotateX( -90deg ) translate3d( 0px, 0px, 250px );
 }
-.top {
+.right {
   background-color: white;
   width: 500px;
   height: 500px;
@@ -89,7 +89,7 @@
   -o-transform: rotateY( 90deg ) translate3d( 0px, 0px, 250px );
   transform: rotateY( 90deg ) translate3d( 0px, 0px, 250px );
 }
-.bottom {
+.left {
   background-color: white;
   width: 500px;
   height: 500px;
