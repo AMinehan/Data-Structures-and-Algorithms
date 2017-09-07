@@ -5,6 +5,8 @@
     */
 
 function HashTable(size){
+size = size || 8;
+
   this.data = [];
   for (let i = 0; i < size; i++){
     this.data.push([]);
@@ -34,3 +36,9 @@ HashTable.prototype.get = function(key){
 HashTable.prototype.resize = function(newSize){
 
 }
+
+/*
+HashTable.prototype.hash = function(key, size){
+
+}
+*/

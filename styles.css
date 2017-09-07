@@ -1,104 +1,70 @@
 .container {
   position: fixed;
-  top: 5%;
-  left: 5%;
-  width: 10px;
-  height: 10px;
+  width: 100%;
+  height: 100%;
   -webkit-perspective: 1000px;
   -moz-perspective: 1000px;
   -o-perspective: 1000px;
   perspective: 1000px;
+  transform: translateZ(-600px);
 }
 .cube {
-  width: 120px;
-  height: 60px;
+  top: 50%;
+  left: 50%;
   position: absolute;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  -webkit-transform: translateZ( -600px );
-  -moz-transform: translateZ(-600px);
-  -o-transform: translateZ(-600px);
-  transform: translateZ(-600px);
 }
 
+.face {
+  background-color: white;
+  width: 496px;
+  height: 496px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+  position: absolute;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
 
 .front {
-  background-color: white;
-  width: 500px;
-  height: 500px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: black;
-  position: absolute;
-  -webkit-transform: rotateY( 0deg ) translate3d( 0px, 0px, 250px );
+  -webkit-transform: rotateY( 0deg ) translate3d( -250px, -250px, 250px );
   -moz-transform: rotateY( 0deg ) translate3d( 0px, 0px, 250px );
   -o-transform: rotateY( 0deg ) translate3d( 0px, 0px, 250px );
-  transform: rotateY( 0deg ) translate3d( 0px, 0px, 250px );
+  transform: rotateY( 0deg ) translate3d( -250px, -250px, 250px );
 }
 .back {
-  background-color: white;
-  width: 500px;
-  height: 500px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: black;
-  position: absolute;
   -webkit-transform: rotateX( 180deg ) translate3d( 0px, 0px, 250px );
   -moz-transform: rotateX( 180deg ) translate3d( 0px, 0px, 250px );
   -o-transform: rotateX( 180deg ) translate3d( 0px, 0px, 250px );
-  transform: rotateX( 180deg ) translate3d( 0px, 0px, 250px );
+  transform: rotateX( 180deg ) rotateZ(180deg) translate3d( 250px, -250px, 250px );
 }
 .top {
-  background-color: white;
-  width: 500px;
-  height: 500px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: black;
-  position: absolute;
-  -webkit-transform: rotateX( 90deg ) translate3d( 0px, 0px, 250px );
+  -webkit-transform: rotateX( 90deg ) translate3d( -250px, -250px, 250px );
   -moz-transform: rotateX( 90deg ) translate3d( 0px, 0px, 250px );
   -o-transform: rotateX( 90deg ) translate3d( 0px, 0px, 250px );
-  transform: rotateX( 90deg ) translate3d( 0px, 0px, 250px );
+  transform: rotateX( 90deg ) translate3d( -250px, 0px, 500px );
 }
 .bottom {
-  background-color: white;
-  width: 500px;
-  height: 500px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: black;
-  position: absolute;
   -webkit-transform: rotateX( -90deg ) translate3d( 0px, 0px, 250px );
   -moz-transform: rotateX( -90deg ) translate3d( 0px, 0px, 250px );
   -o-transform: rotateX( -90deg ) translate3d( 0px, 0px, 250px );
-  transform: rotateX( -90deg ) translate3d( 0px, 0px, 250px );
+  transform: rotateX( -90deg ) translate3d( -250px, 0px, 0px );
 }
 .right {
-  background-color: white;
-  width: 500px;
-  height: 500px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: black;
-  position: absolute;
   -webkit-transform: rotateY( 90deg ) translate3d( 0px, 0px, 250px );
   -moz-transform: rotateY( 90deg ) translate3d( 0px, 0px, 250px );
   -o-transform: rotateY( 90deg ) translate3d( 0px, 0px, 250px );
-  transform: rotateY( 90deg ) translate3d( 0px, 0px, 250px );
+  transform: rotateY( 90deg ) translate3d( 0px, -250px, 0px );
 }
 .left {
-  background-color: white;
-  width: 500px;
-  height: 500px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: black;
-  position: absolute;
   -webkit-transform: rotateY( -90deg ) translate3d( 0px, 0px, 250px );
   -moz-transform: rotateY( -90deg ) translate3d( 0px, 0px, 250px );
   -o-transform: rotateY( -90deg ) translate3d( 0px, 0px, 250px );
-  transform: rotateY( -90deg ) translate3d( 0px, 0px, 250px );
+  transform: rotateY( -90deg ) translate3d( 0px, -250px, 500px );
 }
