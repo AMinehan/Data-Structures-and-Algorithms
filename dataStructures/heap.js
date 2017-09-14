@@ -23,3 +23,8 @@ PriorityQueue.prototype.bubbleDown = function(value){
 PriorityQueue.prototype.upsert = function(value){
   //FILL ME IN
 }
+
+PriorityQueue.prototype.test = function(){
+  let results = ['Priority Queue: '];
+  return results;
+}

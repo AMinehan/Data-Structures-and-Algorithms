@@ -20,3 +20,8 @@ Tree.prototype.search = function(value){
 Tree.prototype.add = function(value){
   //FILL ME IN
 }
+
+Tree.prototype.test = function(){
+  let results = ['Trees: '];
+  return results;
+}

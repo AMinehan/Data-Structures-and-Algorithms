@@ -22,3 +22,10 @@ LinkedList.prototype.addToTail = function(value){
 LinkedList.prototype.removeHead = function(){
   //FILL ME IN
 }
+
+
+
+LinkedList.prototype.test = function(){
+  let results = ['Linked Lists: '];
+  return results;
+}

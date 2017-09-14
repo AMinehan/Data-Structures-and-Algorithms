@@ -1,4 +1,4 @@
-// View section
+//  View section
 
 let rotateStart;
 
@@ -10,7 +10,7 @@ let cube = findFirstElement(function(current){
 
 cube.style.transform = "transform: rotateX(0deg) rotateY(0deg);";
 
-//searches through the DOM and returns the first element that passes a truth test
+//  searches through the DOM and returns the first element that passes a truth test
 
 function findFirstElement(func){
   let queue = [document.body];
@@ -27,7 +27,7 @@ function findFirstElement(func){
   }
 }
 
-//searches through the DOM and returns every element that passes a truth test
+//  searches through the DOM and returns every element that passes a truth test
 
 function findAllElements(func){
   let queue = [document.body]
@@ -76,9 +76,11 @@ function mouseMove(startEvent){
   let offsetY = startStyle[1];
 
   return function(event){
+    //  throttles function: limits calls to this function to once every 30 milliseconds, or 33.3 fps, and
+    //  stores a reference to the last time it was called inside the closure.
+
     let current = Date.now();
 
-    // throttle function: limits calls to this function to once every 30 milliseconds, or 33.3 fps
     if ((current - last) <= 30){
       return;
     }
