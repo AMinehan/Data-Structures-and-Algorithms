@@ -90,10 +90,33 @@ BinarySearchTree.prototype.search = function(value){
 /*
   Rebalancing a binary tree:
 
+  When your tree is grossly imbalanced, sometimes it helps to rebalance it.
 
+  One way of rebalancing might involve an in-order traversal: a recursive fuction that
+  gets called on the left node, then the parent node, then the right node.  For instance:
+
+  function inOrderTraversal (tree) {
+    let result = [];
+    function traverse(node){
+      if (!node){
+        return;
+      }
+      traverse(node.left);
+      result.push(node.value);
+      traverse(node.right);
+    }
+    traverse(tree.root)
+    return result
+  }
+
+  In this way, we can take our binary tree and turn it into a sorted array.
+
+  How, then, can we take a sorted array and turn it into a perfectly balanced binary
+  search tree?
 */
-BinarySearchTree.prototype.rebalance = function(){
 
+BinarySearchTree.prototype.rebalance = function(){
+  //FILL ME IN
 }
 
 

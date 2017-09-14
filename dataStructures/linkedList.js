@@ -16,6 +16,8 @@
   add(2)
   add(1)
 
+                                       head        tail
+                                         v           v
   Our linked list would have an order of 5, 4, 3, 2, 1.  Pretty straightforward, so let's
   add and remove some values:
 
@@ -24,6 +26,8 @@
   remove()
   add(7)
 
+                                     head       tail
+                                      v           v
   The linked list now has an order of 3, 2, 1, 0, 7.
 
   Doubly-linked lists simply make each element point to the element in front of it as well.
