@@ -30,9 +30,17 @@ window.onload = function(){
 
 }
 
+/*
+  truthy is going to be the result of calling the equals function below
+*/
+
 function expect (truthy, desc) {
   return truthy ? 'passed' : desc;
 }
+
+/*
+  comparison function: takes a callback function and uses try-catch for error handling
+*/
 
 function equals (func, argTwo) {
   try {
@@ -42,6 +50,10 @@ function equals (func, argTwo) {
     return false;
   }
 }
+
+/*
+  Takes the results of the tests and turns it into an array of strings that can be displayed
+*/
 
 function reduceTests (arr) {
   let result = [arr[0], 0];
@@ -53,7 +65,7 @@ function reduceTests (arr) {
       result[1] += 1;
     }
   }
-  result[1] = ( '' + result[1] + ' out of ' + arr.length - 1 + ' tests passed!');
+  result[1] = ( '' + result[1] + ' out of ' + arr.length + ' tests passed!');
 
   return result;
 }
