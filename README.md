@@ -3,7 +3,7 @@ This is the git repository containing exercises for my presentation
 
 # Instructions
 
-Testify.html contains the spinning cube of unit testing.  The results of your tests will show up here.  Click and drag to rotate the cube and find the tests you're looking for along your adventure for knowledge!
+Testify.html contains the spinning cube of unit testing.  The results of your tests will show up here.  Click and drag to rotate the cube and find the tests you're looking for along your adventure for knowledge!  If you would like to disregard the cube, test results are also logged to the console.
 
 If you're interested in learning (a little) JavaScript, I've commented the code that runs the tests and split it into tests.js and view.js.
 

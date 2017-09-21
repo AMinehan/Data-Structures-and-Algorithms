@@ -52,11 +52,11 @@ AVLTree.prototype.remove = function(value){
   //FILL ME IN
 }
 
-AVLTreeLeaf.prototype.rotateLeft = function(node){
+AVLTreeLeaf.prototype.rotateLeft = function(node, parent){
   //FILL ME IN
 }
 
-AVLTreeLeaf.prototype.rotateRight = function(node){
+AVLTreeLeaf.prototype.rotateRight = function(node, parent){
   //FILL ME IN
 }
 
@@ -68,23 +68,31 @@ AVLTree.prototype.test = function(){
   let results = ['AVL Tree: '];
 
   this.insert(1);
+
   results.push(expect(equals(()=>this.root.value, 1), 'AVLTree should be able to add a new value'));
 
   this.insert(2);
+
   results.push(expect(equals(()=>this.root.right.value, 2), 'AVLTree should be able to add multiple values'));
+
   this.insert(3);
 
   results.push(expect(equals(()=>this.root.value, 2), 'AVLTree should rotateLeft when unbalanced on the right'));
+
   this.insert(4);
-  this.remove(3);
-  results.push(expect(equals(()=>this.root.right.value, 4), 'AVLTree should be able to remove elements'));
+
+  results.push(expect(equals(()=>this.remove(3), 3), 'AVLTree should be able to remove elements'));
+  results.push(expect(equals(()=>this.root.right.value, 4), 'AVLTree should be able to replace removed elements'));
 
   this.insert(0);
   this.insert(-1);
+
   results.push(expect(equals(()=>this.root.left.value, 0), 'AVLTree should rotateRight when unbalanced on the left'));
 
   this.insert(-2);
   this.remove(0);
+
   results.push(expect(equals(()=>this.root.left.value, -1), 'AVLTree should be able to find the largest smallest value when removing values'));
+
   return results;
 }
