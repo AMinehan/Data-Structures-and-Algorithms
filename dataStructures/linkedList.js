@@ -57,5 +57,16 @@ LinkedList.prototype.removeHead = function(){
 
 LinkedList.prototype.test = function(){
   let results = ['Linked Lists: '];
+
+  this.addToTail(1);
+  results.push(expect(equals(()=>this.head.value, 1), 'LinkedList should properly enqueue'));
+  this.addToTail(2);
+  this.addToTail(3);
+  results.push(expect(equals(()=>this.removeHead(), 1), 'LinkedList should properly dequeue'));
+  this.removeHead()
+  results.push(expect(equals(()=>this.head.value, 3), 'LinkedList should maintain first-in-first-out order'));
+  this.addToTail(4);
+  results.push(expect(equals(()=>this.head.value, 3), 'LinkedList should end with a head value of 3'));
+  results.push(expect(equals(()=>this.tail.value, 4), 'LinkedList should end with a tail value of 4'));
   return results;
 }

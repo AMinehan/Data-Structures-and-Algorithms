@@ -49,20 +49,19 @@
 */
 
 function HashTable(size){
-size = size || 8;
-
+  this.size = size || 8;
   this.data = [];
+
   for (let i = 0; i < size; i++){
     this.data.push([]);
   }
-  this.size = 0;
 }
 
 // This is a hashing function.  It takes a key and returns a large, pseudorandom number.
 
 function hashify (key){
   let result = 0;
-  for (let i = 0; i < key.length; key++){
+  for (let i = 0; i < key.length; i++){
     result = (result << 5) + result + key.charCodeAt(i);
     result = result & result;
   }
@@ -85,8 +84,8 @@ HashTable.prototype.get = function(key){
 /*  Advanced functions  */
 
 /*
-  Resize: when a hash table is less than 25% full or over 75% full, it should double/half
-  the size of the bucket to save memory or accomodate more key: value pairs
+  Resize: when a hash table is less than 25% full or over 75% full, it should halve/double
+  the size of the bucket to save memory or accomodate more key-value pairs
 */
 HashTable.prototype.resize = function(newSize){
   //FILL ME IN LATER
@@ -105,5 +104,19 @@ HashTable.prototype.hash = function(key, size){
 
 HashTable.prototype.test = function(){
   let results = ['Hash Tables: ']
+
+  this.set('hello', 'world');
+  results.push(expect(equals(()=>this.data[4], [['hello', 'world']]), 'HashTable should be able to add new key-value pairs'));
+
+  results.push(expect(equals(()=>this.get('hello'), 'world'), 'HashTable should be able to retrieve stored values'));
+
+  this.set('helloCollision', 5);
+  this.set('hellocollision', 8);
+  results.push(expect(equals(()=>this.data[0], [['helloCollision', 5], ['hellocollision', 8]]), 'HashTable should be able to handle hash collisions'));
+
+  this.remove('hello');
+
+  results.push(expect(equals(()=>this.data[4], []), 'HashTable should be able to delete key-value pairs'))
+
   return results;
 }

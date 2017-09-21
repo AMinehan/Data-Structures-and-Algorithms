@@ -86,5 +86,21 @@ NewArray.prototype.splice = function(index, count, ...values){
 
 NewArray.prototype.test = function(){
   let results = ['Arrays: '];
+
+  this.push(3);
+  results.push(expect(equals(()=>this[0], 3), 'Arrays should be able to push to a new index'));
+  this.push(2);
+  this.push(1);
+  results.push(expect(equals(()=>this.length, 3), 'Arrays should maintain a length property'));
+  results.push(expect(equals(()=>this.pop(), 1), 'Arrays should be able to pop its last index'));
+
+  this.unshift(1);
+  results.push(expect(equals(()=>this.length, 3), 'Arrays should maintain a length property while unshifting'));
+  results.push(expect(equals(()=>this[0], 1), 'Arrays should be able to unshift to its first index'));
+
+  results.push(expect(equals(()=>this.shift(), 1), 'Arrays should be able to shift its first index'));
+
+  results.push(expect(equals(()=>this.slice(1), [2]), 'Arrays should be able to slice a range of indexes'));
+
   return results;
 }

@@ -124,7 +124,14 @@ BinarySearchTree.prototype.rebalance = function(){
 BinarySearchTree.prototype.test = function(){
   let results = ['Binary Search Tree:'];
   this.add(1);
+  results.push(expect(equals(()=>this.root.value, 1), 'BinarySearchTree should be able to add a value'));
   this.add(2);
-  results.push(expect(equals(function(){return this.root.right.value}, 2), 'should add new values to the tree'));
-  results.push(expect(equals(this.search(2), 2), 'should search the tree for values'));
+  results.push(expect(equals(()=>this.root.right.value, 2), 'BinarySearchTree should be able to sort increasing values'));
+  this.add(3);
+  results.push(expect(equals(()=>this.root.right.right.value, 3), 'BinarySearchTree should be able to add values to a depth of 3'));
+  this.add(-1);
+  results.push(expect(equals(()=>this.root.left.value, -1), 'BinarySearchTree should be able to sort decreasing values'));
+  this.add(0);
+  results.push(expect(equals(()=>this.root.left.right.value, 0), 'BinarySearchTree should be able to sort increasing and decreasing values'));
+  return results;
 }

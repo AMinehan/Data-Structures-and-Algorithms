@@ -8,7 +8,8 @@ let cube = findFirstElement(function(current){
 
 //
 
-cube.style.transform = "transform: rotateX(0deg) rotateY(0deg);";
+// cube.style.transform = "transform: rotateX(0deg) rotateY(0deg);";
+
 
 //  searches through the DOM and returns the first element that passes a truth test
 
