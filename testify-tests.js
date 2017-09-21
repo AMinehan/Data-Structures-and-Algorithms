@@ -6,6 +6,8 @@ window.onload = function(){
   let results = [];
   let testObject;
 
+  cube.style.transform = 'rotateX(-30deg) rotateY(-30deg)'
+
   for (let i = 0; i < objectsToTest.length; i++){
     try {
       testObject = new objectsToTest[i];

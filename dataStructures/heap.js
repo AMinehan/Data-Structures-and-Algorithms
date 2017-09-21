@@ -71,6 +71,8 @@
   [undefined, 1]           -> 2
   [undefined]              -> 1
 
+
+  For this exercise, we'll be prioritizing for max value
 */
 
 const PriorityQueue = function(){
@@ -95,5 +97,27 @@ PriorityQueue.prototype.upsert = function(value){
 
 PriorityQueue.prototype.test = function(){
   let results = ['Priority Queue: '];
+  this.add(5);
+
+
+  results.push(expect(equals(()=>this.values[0], 5), 'PriorityQueue should be able to add a new value'));
+  results.push(expect(equals(()=>this.remove(), 5), 'PriorityQueue should be able to dequeue'))
+
+  this.add(5);
+
+  this.add(10);
+
+  results.push(expect(equals(()=>this.values[0], 10), 'PriorityQueue should be able to prioritize higher values'));
+  this.add(7);
+
+  let temp = [];
+  try {
+    for (let i = 0; i < this.values.length; i++){
+      temp.push(this.remove());
+    }
+  } catch(e) {
+
+  }
+  results.push(expect(equals(()=>temp, [10, 7, 5]), 'PriorityQueue should be able to remove values in the right order'))
   return results;
 }
