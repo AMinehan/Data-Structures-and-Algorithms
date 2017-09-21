@@ -1,5 +1,5 @@
 //test everything on page load, concatinate everything into results array
-
+let versionIndex = 3;
 window.onload = function(){
   console.log('loading tests');
   let objectsToTest = [NewArray, LinkedList, BinarySearchTree, HashTable, PriorityQueue, AVLTree];
