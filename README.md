@@ -17,21 +17,33 @@ I would suggest completing them in this order:
 ## Data Structures:
 
 arrays.js
+
 linkedList.js
+
 binarySearchTree.js
+
 hashTable.js
+
 heap.js
+
 AVLTree.js
 
 ## Algorithms:
 
 binarySearch.js
+
 insertionSort.js
+
 mergeSort.js
+
 quickSort.js
+
 DFS.js
+
 BFS.js
+
 graphs.js
+
 Dijkstras.js
 
 # Additional Resources:
