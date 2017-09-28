@@ -1,9 +1,9 @@
 /*
-  Bubble Sort:
+  Insertion Sort:
 
-  Bubble sort is the first sorting algorithm most people learn, mainly due to
-  its simplicity.  Starting from the front of an array, it takes each element
-  and compares it one at a time with each element that was sorted before it.
+  Insertion sort is one of the first sorting algorithms most people learn,
+  mainly due to its simplicity.  It builds a sorted array from the beginning of
+  the array by inserting items one at a time.
 
   For instance, let's sort the array [4, 3, 2, 1], lowest to highest.  The first
   index is already considered to be sorted, so it compares the second element
@@ -26,12 +26,16 @@
   [2, 1, 3, 4]
   [1, 2, 3, 4]
 
-  This is a worst-case scenario for bubble sort, since each element has to be
+  This is a worst-case scenario for insertion sort, since each element has to be
   compared against each element that came before it.
 
-  In practice, bubblesort should never be used by anyone, but it's easy to learn.
+  In practice, insertionsort should rarely, if ever, be used, but it's easy to learn.
 */
 
-function bublleSort(arr){
+function insertionSort(arr){
+
+}
+
+insertionSort.test = function(){
 
 }

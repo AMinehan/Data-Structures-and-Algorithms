@@ -1,15 +1,37 @@
 //  View section
 
+//  Global variables: using global variables is bad style, so don't do this:
+
 let rotateStart;
+let stylePrefix = '';
+
+//  Finds which style prefix works for the browser being used and assigns it
+//  to stylePrefix.  I'm sure there's an easier way of doing this.  Wrapping
+//  everything inside a self-invoking anonymous function keeps the global
+//  namespace clean, but is otherwise kind of pointless.
+
+(function(){
+  let prefixes = ['-moz-', '-o-', '-webkit-'];
+  let testObj = document.createElement('div');
+  let testString = 'transform: translate(50px, 50px)';
+
+  for (let i = 0; i < prefixes.length; i++){
+
+    // set style on the test object using one of the prefixes
+    testObj.style = prefixes[i] + testString;
+
+    // if prefix works, save to global stylePrefix and break
+
+    if (testObj.style.transform){
+      stylePrefix = prefixes[i];
+      break;
+    }
+  }
+})();
 
 let cube = findFirstElement(function(current){
   return current.className === 'cube';
 });
-
-//
-
-//  cube.style.transform = "transform: rotateX(0deg) rotateY(0deg);";
-
 
 //  searches through the DOM and returns the first element that passes a truth test
 
@@ -87,11 +109,10 @@ function mouseMove(startEvent){
     }
     last = current;
 
-    let styles = styleStrings((offsetX + (event.x - startX)) % 360, (offsetY - (event.y - startY)) % 360);
+    let style = styleString((offsetX + (event.x - startX)) % 360, (offsetY - (event.y - startY)) % 360);
 
-    styles.forEach(function(c){
-      cube.style = c;
-    });
+
+    cube.style = style;
   }
 }
 
@@ -105,9 +126,8 @@ function mouseMove(startEvent){
 //  |
 //  +----- x
 
-function styleStrings(x, y){
-  return ["-webkit-transform: rotateX(" + y + "deg) rotateY(" + x + "deg);",
-          "-moz-transform: rotateX(" + y + "deg) rotateY(" + x + "deg);",
-          "-o-transform: rotateX(" + y + "deg) rotateY(" + x + "deg);",
-          "transform: rotateX(" + y + "deg) rotateY(" + x + "deg);"];
+//  multiple style strings are needed for browser compatibility.
+
+function styleString(x, y){
+  return stylePrefix + "transform: rotateX(" + y + "deg) rotateY(" + x + "deg);"
 }

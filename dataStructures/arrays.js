@@ -8,8 +8,8 @@
   not the functions attached to Array.prototype.
 
   For this exercise, we will be re-creating some functions from the Array
-  prototype to better understand how they work and when you might not want
-  to use them.
+  prototype to better understand how they work and when you might or might not
+  want to use them.
 
 */
 
