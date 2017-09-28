@@ -49,12 +49,17 @@ Dijkstras.js
 # Additional Resources:
 
 Visualizations:
+
 https://www.cs.usfca.edu/~galles/visualization/Algorithms.html
 
 Intro to JavaScript:
+
 http://codecademy.com
 
 General practice problems:
+
 https://www.codewars.com
+
 https://leetcode.com
+
 https://www.hackerrank.com
