@@ -1,5 +1,6 @@
 # Data-Structures-and-Algorithms
-This is the git repository containing exercises for my presentation
+
+This is the git repository containing the exercises for my presentation
 
 # Instructions
 
@@ -13,17 +14,20 @@ I would suggest completing them in this order:
 
 Data Structures:
 
-Arrays.js
+arrays.js
 linkedList.js
-BinarySearchTree.js
-HashTable.js
-Heap.js
+binarySearchTree.js
+hashTable.js
+heap.js
 AVLTree.js
 
 Algorithms:
 
-bubbleSort.js
+binarySearch.js
+insertionSort.js
 mergeSort.js
 quickSort.js
 DFS.js
+BFS.js
+graphs.js
 Dijkstras.js

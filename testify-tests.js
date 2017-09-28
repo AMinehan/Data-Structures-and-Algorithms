@@ -3,8 +3,10 @@ let versionIndex = 3;
 window.onload = function(){
   console.log('loading tests');
   let objectsToTest = [NewArray, LinkedList, BinarySearchTree, HashTable, PriorityQueue, AVLTree];
+  let algorithmsToTest = [bubbleSort, binarySearch, BFS, dijkstra, paths, mergeSort, quickSort, inOrderDFS, preOrderDFS, postOrderDFS]
   let results = [];
   let testObject;
+  let algorithmResults = [[0, ' out of ' + algorithmsToTest.length + ' algorthm tests passed!']];
 
   cube.style.transform = 'rotateX(-30deg) rotateY(-30deg)'
 
@@ -17,6 +19,8 @@ window.onload = function(){
       console.log(objectsToTest[i], i, 'broken tests: ' + e);
     }
   }
+
+
 
   display(results);
 }
