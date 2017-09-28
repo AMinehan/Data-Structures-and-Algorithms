@@ -46,11 +46,11 @@ const LinkedListNode = function(value){
 }
 
 LinkedList.prototype.addToTail = function(value){
-  //FILL ME IN
+  // FILL ME IN
 }
 
 LinkedList.prototype.removeHead = function(){
-  //FILL ME IN
+  // FILL ME IN
 }
 
 
@@ -68,5 +68,6 @@ LinkedList.prototype.test = function(){
   this.addToTail(4);
   results.push(expect(equals(()=>this.head.value, 3), 'LinkedList should end with a head value of 3'));
   results.push(expect(equals(()=>this.tail.value, 4), 'LinkedList should end with a tail value of 4'));
+  console.log(this)
   return results;
 }

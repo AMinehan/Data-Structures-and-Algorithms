@@ -8,6 +8,21 @@ function BFS(tree, func){
 }
 
 BFS.test = function(){
-  let tree = {value: 1, left: {value: 2, left: undefined, right: {value: 3, left: undefined, right: undefined}}, right: {value: 4, left: undefined, right: undefined}};
-  return expect(equals(BFS(tree, function(node){return node.value}), [1, 2, 4, 3]), 'Breadth-first search should traverse breadth first');
+  let tree = new BinarySearchTree();
+  tree.add(4);
+  tree.add(2);
+  tree.add(3);
+  tree.add(5);
+  tree.add(1);
+
+/*
+      4
+     / \
+    2   5
+   / \
+  1   3
+
+*/
+
+  return expect(equals(()=>BFS(tree, function(node){return node.value}), [4, 2, 5, 1, 3]), 'Breadth-first search should traverse breadth first');
 }
