@@ -23,7 +23,7 @@ window.onload = function(){
   for (let i = 0; i < algorithmsToTest.length; i++){
 
     testResult = algorithmsToTest[i].test();
-    console.log(testResult);
+
     if (testResult !== 'passed') {
       algorithmResults.push(testResult);
     } else {
@@ -32,6 +32,8 @@ window.onload = function(){
   }
 
   algorithmResults[0] = algorithmResults[0].join('');
+  console.log(algorithmResults);
+
   results = results.concat(algorithmResults);
 
   display(results);

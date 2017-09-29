@@ -102,5 +102,5 @@ postOrderDFS.test = function(){
     1   3
 
   */
-  return expect(equals(()=>postOrderDFS(tree, testFunc), [5, 3, 1, 2, 4]), 'postOrderDFS should traverse a tree in post-order');
+  return expect(equals(()=>postOrderDFS(tree, testFunc), [1, 3, 2, 5, 4]), 'postOrderDFS should traverse a tree in post-order');
 }
