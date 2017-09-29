@@ -37,7 +37,7 @@ inOrderDFS.test = function(){
 
   */
 
-  return expect(equals(()=>inOrderDFS(test, testFunc), [1, 2, 3, 4, 5]), 'inOrderDFS should traverse a tree in-order')
+  return expect(equals(()=>inOrderDFS(test, testFunc), [1, 2, 3, 4, 5]), 'inOrderDFS should traverse a tree in-order');
 }
 
 preOrderDFS.test = function(){
@@ -60,7 +60,7 @@ preOrderDFS.test = function(){
 
   */
 
-  return expect(equals(()=>preOrderDFS(tree, testFunc), [4, 2, 1, 3, 5]), 'preOrderDFS should traverse a tree pre-order')
+  return expect(equals(()=>preOrderDFS(tree, testFunc), [4, 2, 1, 3, 5]), 'preOrderDFS should traverse a tree in pre-order');
 }
 
 postOrderDFS.test = function(){
@@ -82,5 +82,5 @@ postOrderDFS.test = function(){
     1   3
 
   */
-  return expect(equals(()=>postOrderDFS(tree, testFunc), [5, 3, 1, 2, 4]));
+  return expect(equals(()=>postOrderDFS(tree, testFunc), [5, 3, 1, 2, 4]), 'postOrderDFS should traverse a tree in post-order');
 }

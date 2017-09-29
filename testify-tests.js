@@ -5,7 +5,7 @@ window.onload = function(){
   let objectsToTest = [NewArray, LinkedList, BinarySearchTree, HashTable, PriorityQueue, AVLTree];
   let algorithmsToTest = [insertionSort, binarySearch, BFS, dijkstra, paths, mergeSort, quickSort, inOrderDFS, preOrderDFS, postOrderDFS]
   let results = [];
-  let testObject;
+  let testObject, testResult;
   let algorithmResults = [[0, ' out of ' + algorithmsToTest.length + ' algorthm tests passed!']];
 
   cube.style.transform = 'rotateX(-30deg) rotateY(-30deg)'
@@ -20,7 +20,19 @@ window.onload = function(){
     }
   }
 
+  for (let i = 0; i < algorithmsToTest.length; i++){
 
+    testResult = algorithmsToTest[i].test();
+    console.log(testResult);
+    if (testResult !== 'passed') {
+      algorithmResults.push(testResult);
+    } else {
+      algorithmResults[0] += 1;
+    }
+  }
+
+  algorithmResults[0] = algorithmResults[0].join('');
+  results = results.concat(algorithmResults);
 
   display(results);
 }
