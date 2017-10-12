@@ -52,7 +52,7 @@ function HashTable(size){
   this.size = size || 8;
   this.data = [];
 
-  for (let i = 0; i < size; i++){
+  for (let i = 0; i < this.size; i++){
     this.data.push([]);
   }
 }
