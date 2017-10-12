@@ -10,13 +10,13 @@
 
   It could also be represented as a tree:
 
-        1
-      /   \
-    2       3
-   / \     / \
-  4   5   6   7
- / \  |
-8  9 10
+          1
+        /   \
+      2       3
+     / \     / \
+    4   5   6   7
+   / \  |
+  8  9 10
 
   Each element of the array at index i has two childen at index i * 2 and (i * 2) + 1.
   Similarly, each element of the array at index i has a parent at index Math.floor(i / 2).
