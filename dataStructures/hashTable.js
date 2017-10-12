@@ -34,7 +34,7 @@
   A hashing collision occurs when two keys hash to the same index.  In that case,
   both values are stored in the same index and the computer has to iterate through
   all values to find the correct one.  Such an access is linear-time, so ideally,
-  a hash table should always be at least 75% empty.  When a collision occurs, the
+  a hash table should always be mostly empty.  When a collision occurs, the
   bucket looks like this:
 
   [[],
@@ -92,7 +92,7 @@ HashTable.prototype.resize = function(newSize){
 }
 
 /*
-  Try making your own hashing function!  Don't look at Java's standard hashing function
+  Try making your own hashing function!  Don't look at Java's native hashing function
   for inspiration.
 
   It should sample every character in the key and offer a decent spread between indexes

@@ -21,9 +21,9 @@
   Our linked list would have an order of 5, 4, 3, 2, 1.  Pretty straightforward, so let's
   add and remove some values:
 
-  remove()
+  remove()  -> 5
   add(0)
-  remove()
+  remove()  -> 4
   add(7)
 
                                      head       tail
