@@ -20,9 +20,6 @@
 
 .face {
   background-color: white;
-  display: flex;
-  flex-direction: column;
-  flex-flow: space-around;
   width: 496px;
   height: 496px;
   border-style: solid;
