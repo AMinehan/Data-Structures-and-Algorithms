@@ -84,13 +84,17 @@ function reduceTests (arr) {
 function display(arr){
   let linesPerFace = Math.ceil(arr.length / 6);
   let faces = cube.children;
+  let newLine;
 
   console.log(arr)
 
   for (let i = 0; i < 6; i++){
     for (let j = i * linesPerFace; j < (i * linesPerFace) + linesPerFace; j++){
       if (arr[j] !== undefined) {
-        faces[i].innerHTML += '<div style="transform: translate(20px, 20px)">' + arr[j] + '</div>';
+        newLine = document.createElement('div');
+        newLine.innerText = arr[j];
+        faces[i].appendChild(newLine)
+        // faces[i].innerHTML += '<div style="transform: translate(20px, 20px)">' + arr[j] + '</div>';
       }
     }
   }

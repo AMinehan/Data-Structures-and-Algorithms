@@ -82,8 +82,6 @@ NewArray.prototype.splice = function(index, count, ...values){
   //FILL ME IN
 }
 
-
-
 NewArray.prototype.test = function(){
   let results = ['Arrays: '];
 

@@ -1,9 +1,10 @@
 /*
     Heaps (priority queues, or minheaps/maxheaps):
 
-  Heaps keep the highest or lowest value in an array in a set position in an
-  array for ease of access.  The first element in the array is typically undefined,
-  because math.  Consider the following array, labeled by index:
+  Heaps are a form of priority queue that keep the highest or lowest value in
+  an array in a set position in an array for ease of access.  The first element
+  in the array is typically undefined, because math.  Consider the following
+  array, labeled by index:
 
   [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
@@ -21,7 +22,7 @@
   Similarly, each element of the array at index i has a parent at index Math.floor(i / 2).
 
   Keeping the highest valued element at the front of the array depends on two functions:
-  upsert and bubbledown.  When we add a new element to the array, upsert check to see if its
+  upsert and bubbledown.  When we add a new element to the array, upsert checks to see if its
   parent has a lower value, and if so, it swaps the two elements and calls itself on the
   parent index, until either the new value is at the front of the array or the parent index
   is a higher value.
@@ -77,6 +78,7 @@
 
 const PriorityQueue = function(){
   this.values = [undefined];
+  this.size = 0;
 }
 
 PriorityQueue.prototype.add = function(value){
@@ -96,18 +98,20 @@ PriorityQueue.prototype.upsert = function(value){
 }
 
 PriorityQueue.prototype.test = function(){
-  let results = ['Priority Queue: '];
+  let results = ['Priority Queue (heaps): '];
   this.add(5);
 
 
-  results.push(expect(equals(()=>this.values[0], 5), 'PriorityQueue should be able to add a new value'));
-  results.push(expect(equals(()=>this.remove(), 5), 'PriorityQueue should be able to dequeue'))
+  results.push(expect(equals(()=>this.values[1], 5), 'PriorityQueue should be able to add a new value'));
+  results.push(expect(equals(()=>this.size, 1), 'PriorityQueue should increment queue size as values are added'));
+  results.push(expect(equals(()=>this.remove(), 5), 'PriorityQueue should be able to dequeue'));
+  results.push(expect(equals(()=>this.size, 0), 'PriorityQueue should decrease queue size as values are removed'));
 
   this.add(5);
 
   this.add(10);
 
-  results.push(expect(equals(()=>this.values[0], 10), 'PriorityQueue should be able to prioritize higher values'));
+  results.push(expect(equals(()=>this.values[1], 10), 'PriorityQueue should be able to prioritize higher values'));
   this.add(7);
 
   let temp = [];
@@ -118,6 +122,6 @@ PriorityQueue.prototype.test = function(){
   } catch(e) {
 
   }
-  results.push(expect(equals(()=>temp, [10, 7, 5]), 'PriorityQueue should be able to remove values in the right order'))
+  results.push(expect(equals(()=>temp, [10, 7, 5]), 'PriorityQueue should be able to remove values in the right order'));
   return results;
 }
